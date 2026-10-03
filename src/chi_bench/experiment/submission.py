@@ -478,8 +478,8 @@ def _resolve_domains(cfg: SubmissionConfig, domain_filter: list[str] | None) -> 
 def _build_slice_yaml(cfg: SubmissionConfig, domain: str) -> dict[str, object]:
     """Synthesize the ExperimentConfig YAML for one (submission × domain) slice."""
     slice_cfg: dict[str, object] = {
-        "dataset": str(cfg.domain_dataset_path(domain)),
-        "registry_path": str(cfg.domain_registry_path(domain)),
+        "dataset": cfg.domain_dataset_path(domain).as_posix(),
+        "registry_path": cfg.domain_registry_path(domain).as_posix(),
         "agent": cfg.submission.agent,
         "model": cfg.submission.model,
         "concurrency": cfg.run.concurrency,
@@ -487,7 +487,7 @@ def _build_slice_yaml(cfg: SubmissionConfig, domain: str) -> dict[str, object]:
         "max_retries": cfg.run.max_retries,
         "environment": cfg.run.environment,
         "env_file": cfg.run.env_file,
-        "trials_dir": str(cfg.paths.output_root / domain),  # type: ignore[operator]
+        "trials_dir": (cfg.paths.output_root / domain).as_posix(),  # type: ignore[operator]
         "job_name": f"{cfg.submission.id}__{domain}",
     }
     if cfg.run.timeout_multiplier is not None:

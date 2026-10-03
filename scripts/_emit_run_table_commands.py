@@ -152,9 +152,9 @@ def _emit_command_for_slice(
     # Make the -f path relative to repo root for readability when possible.
     try:
         rel = slice_yaml_path.relative_to(repo_root)
-        path_str = str(rel)
+        path_str = rel.as_posix()
     except ValueError:
-        path_str = str(slice_yaml_path)
+        path_str = slice_yaml_path.as_posix()
 
     parts = ["cb", "experiment", "run", "-f", path_str]
     shell = " ".join(shlex.quote(p) for p in parts)

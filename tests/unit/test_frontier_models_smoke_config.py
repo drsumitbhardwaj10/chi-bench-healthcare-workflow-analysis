@@ -432,7 +432,7 @@ def test_fable_openrouter_full_matrix_emits_3_unique_valid_slices() -> None:
         assert config.max_retries == 2
         assert config.agent_timeout_multiplier == 2.0
         assert config.trials_dir is not None
-        assert str(Path(config.trials_dir).parent) == FABLE_FULL_TRIALS_ROOT
+        assert Path(config.trials_dir).parent.as_posix() == FABLE_FULL_TRIALS_ROOT
         assert not config.trials_dir.startswith("logs/experiments/frontier_models_full_2026_07/")
 
         emitted_datasets.add(config.dataset)
