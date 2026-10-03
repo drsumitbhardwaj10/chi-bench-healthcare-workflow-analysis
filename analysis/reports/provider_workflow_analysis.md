@@ -1,4 +1,4 @@
-# CHI-Bench Provider Workflow Analysis
+﻿# CHI-Bench Provider Workflow Analysis
 
 ## 1. Objective
 
@@ -46,13 +46,13 @@ The number of policy references associated with each workflow ranges from 6 to 1
 |                10 |                   3 |
 |         **Total** |              **25** |
 
-Fourteen of the 25 workflows (56%) reference at least eight policy files.
+Seventeen of the 25 workflows (68%) reference at least eight policy files.
 
 ![Provider workflows by policy reference count](../figures/provider_policy_complexity.png)
 
 ## 5. Key Observation
 
-The provider benchmark contains 25 workflows spanning 21 distinct condition titles. Each workflow references 6–10 policy files, with 56% of workflows having at least 8 policy references.
+The provider benchmark contains 25 workflows spanning 21 distinct condition titles. Each workflow references 6–10 policy files, with 68% of workflows having at least 8 policy references.
 
 This indicates a multi-source policy and documentation environment rather than a single-rule lookup task.
 
