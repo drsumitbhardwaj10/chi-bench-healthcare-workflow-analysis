@@ -277,3 +277,26 @@ If you use $\chi$-Bench, please cite:
 ## License
 
 Code: Apache-2.0 (see [`LICENSE`](LICENSE)). Data licensing on the [HF dataset card](https://huggingface.co/datasets/actava/chi-bench).
+
+
+## Analytical Workflow Study
+
+This repository also contains a structured analysis of CHI-Bench task design, developed independently as part of a healthcare analytics portfolio.
+
+The analysis covers three workflow perspectives:
+
+| Analysis | Coverage | Focus |
+|---|---:|---|
+| Provider Prior Authorization | 25 workflows | Condition diversity and policy-reference complexity |
+| Payer Utilization Management | 25 workflows | Workflow stages, documentation volume, and policy complexity |
+| Care Management | 25 workflows | Engagement scenarios, condition diversity, and workflow structure |
+
+### Analysis artifacts
+
+- `analysis/notebooks/` — reproducible Jupyter analyses
+- `analysis/data/` — derived task-level metadata
+- `analysis/figures/` — analytical visualizations
+- `analysis/reports/` — written findings
+- `analysis/scripts/` — metadata extraction scripts
+
+The analysis focuses on benchmark structure and workflow characteristics. It does not use hidden evaluation artifacts and does not present benchmark task composition as real-world clinical prevalence or patient behavior.
