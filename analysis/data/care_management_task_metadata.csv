@@ -1,0 +1,26 @@
+task_id,condition,engagement_pattern,sequence,task_title,verifier_timeout_sec,agent_timeout_sec
+cm_afib_moderate_anxious_001,afib,moderate_anxious,001,Ms. Zhang Care Management Handoff,1200.0,900.0
+cm_anorexia_hard_refuses_001,anorexia,hard_refuses,001,Care Management Handoff — Mr. Mansour,1200.0,900.0
+cm_asthma_low_coop_001,asthma,low_coop,001,Care Management Handoff - Mr. Tsosie,1200.0,900.0
+cm_ckd_moderate_anxious_001,ckd,moderate_anxious,001,Ms. Kealoha Care Management Handoff,1200.0,900.0
+cm_complex_esrd_dm_hard_refuses_001,complex_esrd_dm,hard_refuses,001,Care Management Intake Handoff,1200.0,900.0
+cm_complex_hf_afib_ckd_hard_refuses_001,complex_hf_afib_ckd,hard_refuses,001,Care Management Intake Handoff - Ms. Coleman,1200.0,900.0
+cm_complex_parkinson_dep_moderate_tentative_001,complex_parkinson_dep,moderate_tentative,001,Ms. Sato Care Management Handoff,1200.0,900.0
+cm_copd_hard_refuses_002,copd,hard_refuses,002,Care Management Intake Handoff,1200.0,900.0
+cm_dementia_hard_refuses_001,dementia,hard_refuses,001,Care Management Intake Handoff - Ms. Ramirez,1200.0,900.0
+cm_dm_hard_refuses_002,dm,hard_refuses,002,Care Management Intake Handoff,1200.0,900.0
+cm_dm_low_coop_001,dm,low_coop,001,Care Management Handoff - Ms. Miller,1200.0,900.0
+cm_dm_moderate_anxious_001,dm,moderate_anxious,001,Mr. Nez Care Management Handoff,1200.0,900.0
+cm_hf_hard_refuses_002,hf,hard_refuses,002,Care Management Intake Handoff,1200.0,900.0
+cm_htn_low_tentative_001,htn,low_tentative,001,Care Management Handoff - Mr. Patel,1200.0,900.0
+cm_mdd_hard_refuses_002,mdd,hard_refuses,002,Care Management Handoff — Ms. Yazzie,1200.0,900.0
+cm_mdd_moderate_reluctant_001,mdd,moderate_reluctant,001,Mr. Keane Care Management Handoff,1200.0,900.0
+cm_metabolic_syndrome_hard_refuses_001,metabolic_syndrome,hard_refuses,001,Care Management Intake Handoff,1200.0,900.0
+cm_parkinson_hard_refuses_001,parkinson,hard_refuses,001,Care Management Intake Handoff - Mr. Brooks,1200.0,900.0
+cm_post_hip_moderate_anxious_001,post_hip,moderate_anxious,001,Ms. Rao Care Management Handoff,1200.0,900.0
+cm_post_mi_hard_refuses_002,post_mi,hard_refuses,002,Care Management Intake Handoff - Ms. Nakamura,1200.0,900.0
+cm_post_pna_moderate_tentative_001,post_pna,moderate_tentative,001,Ms. Kapua Care Management Handoff,1200.0,900.0
+cm_post_stroke_hard_refuses_001,post_stroke,hard_refuses,001,Care Management Intake Handoff - Ms. Walsh,1200.0,900.0
+cm_ptsd_hard_refuses_001,ptsd,hard_refuses,001,Care Management Handoff — Ms. Khalil,1200.0,900.0
+cm_schizo_hard_refuses_001,schizo,hard_refuses,001,Care Management Handoff — Mr. Doyle,1200.0,900.0
+cm_sud_hard_refuses_001,sud,hard_refuses,001,Care Management Handoff — Ms. Ellis,1200.0,900.0
