@@ -1,9 +1,9 @@
-<div align="center">
-  <img src="assets/figures/X-bench-color@600x.png" alt="χ-Bench" width="300"/>
+﻿<div align="center">
+  <img src="assets/figures/X-bench-color@600x.png" alt="Ï‡-Bench" width="300"/>
   <h1><ins>C</ins>linical <ins>H</ins>ealthcare <ins>I</ins>n-Situ Environment</h1>
   <p><b>Benchmark for long-horizon, policy-rich healthcare workflow agents</b></p>
 
-**🎉 χ-Bench has been accepted to NeurIPS 2026, Evaluations & Datasets Track!** [Read the paper](https://arxiv.org/abs/2605.16679).
+**ðŸŽ‰ Ï‡-Bench has been accepted to NeurIPS 2026, Evaluations & Datasets Track!** [Read the paper](https://arxiv.org/abs/2605.16679).
 
 [![Leaderboard](https://img.shields.io/badge/Leaderboard-chi--bench-blue?style=for-the-badge)](https://actava.ai/benchmarks/leaderboards)
 [![Docs](https://img.shields.io/badge/Docs-chi--bench-ff5baf?style=for-the-badge&logo=readthedocs&logoColor=white)](https://actava.ai/benchmarks/docs)
@@ -24,7 +24,7 @@
 $\chi$-Bench evaluates AI agents on end-to-end U.S. healthcare workflows across three long-horizon domains: provider prior authorization, payer utilization management, and population care management. Each task hands the agent a clinical case in a high-fidelity simulator of 20 healthcare apps exposed over MCP, with a 1,279-document Managed-Care Operations Handbook skills, and asks it to drive the case through tool calls and artifact authoring.
 
 > [!TIP]
-> Reading on the web: **[Overview & authors](https://actava.ai/benchmarks/chi-bench)** · **[Live leaderboard](https://actava.ai/benchmarks/leaderboards)** · **[All 75 tasks](https://actava.ai/benchmarks/tasks)** · **[Docs](https://actava.ai/benchmarks/docs)**.
+> Reading on the web: **[Overview & authors](https://actava.ai/benchmarks/chi-bench)** Â· **[Live leaderboard](https://actava.ai/benchmarks/leaderboards)** Â· **[All 75 tasks](https://actava.ai/benchmarks/tasks)** Â· **[Docs](https://actava.ai/benchmarks/docs)**.
 
 > [!NOTE]
 > **Headline numbers from the paper:**
@@ -32,16 +32,16 @@ $\chi$-Bench evaluates AI agents on end-to-end U.S. healthcare workflows across 
 > - Best agent (Claude Code + Claude Opus 4.6): **28.0%** overall pass@1
 > - No agent clears **20%** on strict pass^3
 > - Marathon (all 25 tasks in one session): **3.8%** overall
-> - End-to-end provider–payer arena: **0%** on the best PA agents
+> - End-to-end providerâ€“payer arena: **0%** on the best PA agents
 
 <p align="center">
-  <img src="assets/figures/main_pass_at_1.png" alt="pass@1 across the three χ-Bench environments" width="780"/>
+  <img src="assets/figures/main_pass_at_1.png" alt="pass@1 across the three Ï‡-Bench environments" width="780"/>
 </p>
 
 | Domain                               | Tasks | What the agent does                                                                                        |
 | ------------------------------------ | ----- | ---------------------------------------------------------------------------------------------------------- |
-| **Prior Authorization — Provider**   | 25    | Verify coverage, gather evidence, submit the PA packet, work the response (RFIs, peer-to-peer, appeals)    |
-| **Prior Authorization — UM (Payer)** | 25    | Intake the request, check plan policy, escalate through nurse and physician reviewers, issue determination |
+| **Prior Authorization - Provider**   | 25    | Verify coverage, gather evidence, submit the PA packet, work the response (RFIs, peer-to-peer, appeals)    |
+| **Prior Authorization - UM (Payer)** | 25    | Intake the request, check plan policy, escalate through nurse and physician reviewers, issue determination |
 | **Care Management**                  | 25    | Review the chart, contact the patient, administer assessments, author a care plan                          |
 
 ## Setup (one-time)
@@ -57,13 +57,13 @@ uv sync --extra dev
 
 **2. API keys.** Copy `.env.example` to `.env` and fill in:
 
-- `ANTHROPIC_API_KEY` — **required**. The workspace judge (`claude-opus-4-7`) grades every trial; also the default credential for the Claude Code agent harness.
-- `OPENAI_API_KEY` — required for Codex and OAI Agents rows.
-- `GEMINI_API_KEY` — required for Gemini CLI rows.
-- `OPENROUTER_API_KEY` — required for the open-stack rows (Hermes / OpenClaw / OAI Agents / DeepAgents on open-weight models).
-- `CLAUDE_CODE_OAUTH_TOKEN` — _optional_, cheaper alternative for smoke-testing the Claude Code harness. When set, Claude Code authenticates via OAuth instead of `ANTHROPIC_API_KEY`.
+- `ANTHROPIC_API_KEY` - **required**. The workspace judge (`claude-opus-4-7`) grades every trial; also the default credential for the Claude Code agent harness.
+- `OPENAI_API_KEY` - required for Codex and OAI Agents rows.
+- `GEMINI_API_KEY` - required for Gemini CLI rows.
+- `OPENROUTER_API_KEY` - required for the open-stack rows (Hermes / OpenClaw / OAI Agents / DeepAgents on open-weight models).
+- `CLAUDE_CODE_OAUTH_TOKEN` - _optional_, cheaper alternative for smoke-testing the Claude Code harness. When set, Claude Code authenticates via OAuth instead of `ANTHROPIC_API_KEY`.
 
-Provide whichever provider keys you need for the rows you intend to run. Hugging Face and Modal credentials are handled by their respective CLIs (see steps 3 and the Modal note below) — no tokens go in `.env`.
+Provide whichever provider keys you need for the rows you intend to run. Hugging Face and Modal credentials are handled by their respective CLIs (see steps 3 and the Modal note below) - no tokens go in `.env`.
 
 **3. Task fixtures from Hugging Face.** Authenticate once with the CLI, then download the gated dataset:
 
@@ -132,9 +132,9 @@ Full flag-by-flag CLI reference: [`docs/cli.md`](docs/cli.md). Web walkthrough o
 
 ## Run from the Harbor hub (no source checkout)
 
-chi-Bench is also published to the [Harbor hub](https://hub.harborframework.com/datasets/actava-ai/chi-bench) as `actava-ai/chi-bench` — **78 single-agent tasks** (75 single-domain + 3 marathon). Each task ships a self-contained Dockerfile that Harbor builds on demand — cloning this repo and downloading the [fixtures dataset](https://huggingface.co/datasets/actava/chi-bench) at build — so you can run a trial without cloning anything yourself.
+chi-Bench is also published to the [Harbor hub](https://hub.harborframework.com/datasets/actava-ai/chi-bench) as `actava-ai/chi-bench` - **78 single-agent tasks** (75 single-domain + 3 marathon). Each task ships a self-contained Dockerfile that Harbor builds on demand - cloning this repo and downloading the [fixtures dataset](https://huggingface.co/datasets/actava/chi-bench) at build - so you can run a trial without cloning anything yourself.
 
-> **The 23 provider↔payer E2E tasks are *not* on the Harbor hub.** The E2E arena needs the two-agent `dual-pa-e2e` harness (provider phase → relay → payer phase), which a stock single-agent `harbor run` can't drive. Run E2E from this repo / the [HF dataset](https://huggingface.co/datasets/actava/chi-bench) with the `cb` CLI: `cb experiment run --dataset data/prior_auth_e2e/tasks/<id> --agent dual-pa-e2e --provider-model … --payer-model …` (see [`configs/experiments/table2_e2e_arena.yaml`](configs/experiments/table2_e2e_arena.yaml)).
+> **The 23 providerâ†”payer E2E tasks are *not* on the Harbor hub.** The E2E arena needs the two-agent `dual-pa-e2e` harness (provider phase â†’ relay â†’ payer phase), which a stock single-agent `harbor run` can't drive. Run E2E from this repo / the [HF dataset](https://huggingface.co/datasets/actava/chi-bench) with the `cb` CLI: `cb experiment run --dataset data/prior_auth_e2e/tasks/<id> --agent dual-pa-e2e --provider-model â€¦ --payer-model â€¦` (see [`configs/experiments/table2_e2e_arena.yaml`](configs/experiments/table2_e2e_arena.yaml)).
 
 **Prerequisites:** Docker + the [Harbor CLI](https://github.com/harbor-framework/harbor), and an **approved HF token** for the gated [handbook](https://huggingface.co/datasets/actava/managed-care-operations-handbook) (the container downloads it at start; the fixtures dataset itself is public).
 
@@ -145,23 +145,23 @@ HF_TOKEN=<your-approved-hf-token> harbor run \
     -a claude-code -m claude-opus-4-7 -y
 ```
 
-`HF_TOKEN` is read from your shell (or `--env-file`) and forwarded into the container — `-y` auto-confirms that prompt. Drop `-i …` to run all 78 tasks. Without an approved token the container exits early with a clear message. See [`docs/harbor-hub.md`](docs/harbor-hub.md) for how the fetch-at-build environment works and how the listing is regenerated/published. This path is for ad-hoc runs and discovery; the **paper-reproduction and leaderboard-submission flows use the `cb` CLI** described above.
+`HF_TOKEN` is read from your shell (or `--env-file`) and forwarded into the container - `-y` auto-confirms that prompt. Drop `-i â€¦` to run all 78 tasks. Without an approved token the container exits early with a clear message. See [`docs/harbor-hub.md`](docs/harbor-hub.md) for how the fetch-at-build environment works and how the listing is regenerated/published. This path is for ad-hoc runs and discovery; the **paper-reproduction and leaderboard-submission flows use the `cb` CLI** described above.
 
 ### Reading the verifier output
 
-Each trial's `verifier/` directory has three files: `reward.json` (the single binary `{"reward": 0.0 | 1.0}` used for pass@1), `scorecard.json` (per-check breakdown — read this to see _why_ a trial passed or failed), and `exported_state.json` (the world snapshot the verifier scored against).
+Each trial's `verifier/` directory has three files: `reward.json` (the single binary `{"reward": 0.0 | 1.0}` used for pass@1), `scorecard.json` (per-check breakdown - read this to see _why_ a trial passed or failed), and `exported_state.json` (the world snapshot the verifier scored against).
 
-`scorecard.json` carries two reward axes: **`binary_reward`** (strict — `1.0` only when every non-N/A check passes; this is what the leaderboard publishes) and **`fractional_reward = passed_checks / total_checks`** (partial credit for diagnostics; never published). A `0.0 / 0.91` split means a near-miss. Checks are grouped under `stages` (`md_review`, `outcome`, `cross_stage`, `intake`, `nurse_review`, `p2p`, `appeal`, `provider_*`, `cm_*`, `e2e_consistency`); `failed_checks` lists what broke.
+`scorecard.json` carries two reward axes: **`binary_reward`** (strict - `1.0` only when every non-N/A check passes; this is what the leaderboard publishes) and **`fractional_reward = passed_checks / total_checks`** (partial credit for diagnostics; never published). A `0.0 / 0.91` split means a near-miss. Checks are grouped under `stages` (`md_review`, `outcome`, `cross_stage`, `intake`, `nurse_review`, `p2p`, `appeal`, `provider_*`, `cm_*`, `e2e_consistency`); `failed_checks` lists what broke.
 
 > [!TIP]
-> Field-by-field walkthrough — including check-name namespaces, the `judge.*` LLM rubric format, three check states, the Care Management two-axis schema, a worked example, and `cb verifier rejudge` — lives at **[actava.ai/benchmarks/docs/scorecard](https://actava.ai/benchmarks/docs/scorecard)**.
+> Field-by-field walkthrough - including check-name namespaces, the `judge.*` LLM rubric format, three check states, the Care Management two-axis schema, a worked example, and `cb verifier rejudge` - lives at **[actava.ai/benchmarks/docs/scorecard](https://actava.ai/benchmarks/docs/scorecard)**.
 
 If you see a scorecard, you're ready to [submit your agent](#submit-your-agent) or [reproduce the paper](#reproduce-paper-tables).
 
 ## Submit your agent
 
 > [!TIP]
-> **Bringing your own agent harness or model endpoint?** The end-to-end recipe lives in [`docs/extending.md`](docs/extending.md) and on the web at **[actava.ai/benchmarks/docs/extending](https://actava.ai/benchmarks/docs/extending)**. The rest of this section is identical regardless of whether you submit a built-in agent or a custom one — the packet shape is unchanged.
+> **Bringing your own agent harness or model endpoint?** The end-to-end recipe lives in [`docs/extending.md`](docs/extending.md) and on the web at **[actava.ai/benchmarks/docs/extending](https://actava.ai/benchmarks/docs/extending)**. The rest of this section is identical regardless of whether you submit a built-in agent or a custom one - the packet shape is unchanged.
 
 Submitting to the [leaderboard](https://github.com/actava-ai/leaderboard) is a 5-command flow: 4 against chi-bench (validate, run, status, prepare) and the final step against the leaderboard repo (commit + open PR). Prefer reading on the web? See the **[in-app submission walkthrough](https://actava.ai/benchmarks/submit)** for the same flow with collapsible step UI.
 
@@ -200,14 +200,14 @@ trials/<domain>/<trial_id>/
 
 Workspace artifacts and Harbor scratch files are deliberately excluded so the packet stays small (typically <100 MB total).
 
-**3. Submit the packet.** Follow the instructions at **<https://github.com/actava-ai/leaderboard>** — either the one-command helper (`python scripts/submit.py <packet-path>`) or the manual `cp` + `git` + `gh pr create` flow. Either way, the packet is identical; the leaderboard repo owns the submission workflow.
+**3. Submit the packet.** Follow the instructions at **<https://github.com/actava-ai/leaderboard>** - either the one-command helper (`python scripts/submit.py <packet-path>`) or the manual `cp` + `git` + `gh pr create` flow. Either way, the packet is identical; the leaderboard repo owns the submission workflow.
 
 Packet contract (for benchmark authors building their own producers): [`docs/submission-packet.md`](docs/submission-packet.md).
 
 **Policy notes.**
 
 - **Partial submissions** (`--domain pa | um | cm` on `submission run`) are accepted but flagged as partial on the leaderboard.
-- **Leaderboard is pass@1 only.** Set `run.n_attempts: 3` to keep extra trials on disk for your own pass@3 / pass^3 analysis — the manifest still publishes pass@1.
+- **Leaderboard is pass@1 only.** Set `run.n_attempts: 3` to keep extra trials on disk for your own pass@3 / pass^3 analysis - the manifest still publishes pass@1.
 
 ## Reproduce paper tables
 
@@ -228,10 +228,10 @@ uv run python scripts/aggregate.py \
   --out-csv logs/table1.csv
 ```
 
-CSV columns: `agent, model, n_trials, n_tasks, pass_at_1, pass_at_1_lo, pass_at_1_hi, pass_at_3, ..., pass_pow_3, pass_pow_3_hi, mean_cost_usd, mean_walltime_s` with task-level percentile bootstrap 95% CIs (1,000 iterations, seed `0` — matches paper Table 2 / Figure 3 captions; override with `--bootstrap-iters` / `--bootstrap-seed`). v1 emits the numeric tables; paper figures are out of scope — plot from the CSV. See [`docs/reproduce.md`](docs/reproduce.md) for the figure scripts we used.
+CSV columns: `agent, model, n_trials, n_tasks, pass_at_1, pass_at_1_lo, pass_at_1_hi, pass_at_3, ..., pass_pow_3, pass_pow_3_hi, mean_cost_usd, mean_walltime_s` with task-level percentile bootstrap 95% CIs (1,000 iterations, seed `0` - matches paper Table 2 / Figure 3 captions; override with `--bootstrap-iters` / `--bootstrap-seed`). v1 emits the numeric tables; paper figures are out of scope - plot from the CSV. See [`docs/reproduce.md`](docs/reproduce.md) for the figure scripts we used.
 
 > [!TIP]
-> Add `--modal` to `run_table.sh` for parallel execution on Modal — matrix reproduction on a single host takes days.
+> Add `--modal` to `run_table.sh` for parallel execution on Modal - matrix reproduction on a single host takes days.
 
 Web walkthrough of the same flow (single trial, submission lifecycle, paper-table reproduction, Modal vs Docker): **[actava.ai/benchmarks/docs/run](https://actava.ai/benchmarks/docs/run)**.
 
@@ -247,7 +247,7 @@ Web walkthrough of the same flow (single trial, submission lifecycle, paper-tabl
 | `openai-agents` | `deepseek/deepseek-v4-pro`    | OAI Agents  |
 | `deepagents`    | `openrouter/x-ai/grok-4.3`    | DeepAgents  |
 
-The full 30-row matrix (every model × harness reported in the main results table) lives in [`configs/experiments/table1_main_matrix.yaml`](configs/experiments/table1_main_matrix.yaml). Browse all 75 tasks at **[actava.ai/benchmarks/tasks](https://actava.ai/benchmarks/tasks)**.
+The full 30-row matrix (every model Ã— harness reported in the main results table) lives in [`configs/experiments/table1_main_matrix.yaml`](configs/experiments/table1_main_matrix.yaml). Browse all 75 tasks at **[actava.ai/benchmarks/tasks](https://actava.ai/benchmarks/tasks)**.
 
 See [`docs/extending.md`](docs/extending.md) (or **[the web version](https://actava.ai/benchmarks/docs/extending)**) to plug in your own.
 
@@ -283,20 +283,29 @@ Code: Apache-2.0 (see [`LICENSE`](LICENSE)). Data licensing on the [HF dataset c
 
 This repository also contains a structured analysis of CHI-Bench task design, developed independently as part of a healthcare analytics portfolio.
 
-The analysis covers three workflow perspectives:
+The analysis examines five complementary workflow perspectives:
 
 | Analysis | Coverage | Focus |
 |---|---:|---|
 | Provider Prior Authorization | 25 workflows | Condition diversity and policy-reference complexity |
 | Payer Utilization Management | 25 workflows | Workflow stages, documentation volume, and policy complexity |
 | Care Management | 25 workflows | Engagement scenarios, condition diversity, and workflow structure |
+| Prior Authorization E2E | 23 workflows | Provider-to-payer handoff and end-to-end workflow structure |
+| Marathon | 3 sessions / 75 underlying task instances | Long-horizon orchestration and workflow-state preservation |
 
 ### Analysis artifacts
 
-- `analysis/notebooks/` — reproducible Jupyter analyses
-- `analysis/data/` — derived task-level metadata
-- `analysis/figures/` — analytical visualizations
-- `analysis/reports/` — written findings
-- `analysis/scripts/` — metadata extraction scripts
+- `analysis/notebooks/` - reproducible Jupyter analyses
+- `analysis/data/` - derived task-level metadata
+- `analysis/figures/` - analytical visualizations
+- `analysis/reports/` - written findings
+- `analysis/scripts/` - metadata extraction and visualization scripts
 
-The analysis focuses on benchmark structure and workflow characteristics. It does not use hidden evaluation artifacts and does not present benchmark task composition as real-world clinical prevalence or patient behavior.
+### Analytical scope
+
+The analysis covers individual workflow complexity, provider-to-payer coordination, care-management engagement scenarios, and long-horizon multi-workflow execution.
+
+The Marathon layer contains three extended sessions covering the complete 25-task sets for provider prior authorization, payer utilization management, and care management. These sessions collectively reference 75 underlying task instances, but they should not be interpreted as 75 additional unique clinical cases.
+
+The analysis focuses on benchmark structure and workflow characteristics. It does not use hidden evaluation artifacts and does not present benchmark task composition as real-world clinical prevalence, utilization, or patient behavior.
+
