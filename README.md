@@ -1,9 +1,9 @@
 ﻿<div align="center">
-  <img src="assets/figures/X-bench-color@600x.png" alt="Ï‡-Bench" width="300"/>
+  <img src="assets/figures/X-bench-color@600x.png" alt="χ-Bench" width="300"/>
   <h1><ins>C</ins>linical <ins>H</ins>ealthcare <ins>I</ins>n-Situ Environment</h1>
   <p><b>Benchmark for long-horizon, policy-rich healthcare workflow agents</b></p>
 
-**ðŸŽ‰ Ï‡-Bench has been accepted to NeurIPS 2026, Evaluations & Datasets Track!** [Read the paper](https://arxiv.org/abs/2605.16679).
+**🎉 χ-Bench has been accepted to NeurIPS 2026, Evaluations & Datasets Track!** [Read the paper](https://arxiv.org/abs/2605.16679).
 
 [![Leaderboard](https://img.shields.io/badge/Leaderboard-chi--bench-blue?style=for-the-badge)](https://actava.ai/benchmarks/leaderboards)
 [![Docs](https://img.shields.io/badge/Docs-chi--bench-ff5baf?style=for-the-badge&logo=readthedocs&logoColor=white)](https://actava.ai/benchmarks/docs)
@@ -24,7 +24,7 @@
 $\chi$-Bench evaluates AI agents on end-to-end U.S. healthcare workflows across three long-horizon domains: provider prior authorization, payer utilization management, and population care management. Each task hands the agent a clinical case in a high-fidelity simulator of 20 healthcare apps exposed over MCP, with a 1,279-document Managed-Care Operations Handbook skills, and asks it to drive the case through tool calls and artifact authoring.
 
 > [!TIP]
-> Reading on the web: **[Overview & authors](https://actava.ai/benchmarks/chi-bench)** Â· **[Live leaderboard](https://actava.ai/benchmarks/leaderboards)** Â· **[All 75 tasks](https://actava.ai/benchmarks/tasks)** Â· **[Docs](https://actava.ai/benchmarks/docs)**.
+> Reading on the web: **[Overview & authors](https://actava.ai/benchmarks/chi-bench)** · **[Live leaderboard](https://actava.ai/benchmarks/leaderboards)** · **[All 75 tasks](https://actava.ai/benchmarks/tasks)** · **[Docs](https://actava.ai/benchmarks/docs)**.
 
 > [!NOTE]
 > **Headline numbers from the paper:**
@@ -32,10 +32,10 @@ $\chi$-Bench evaluates AI agents on end-to-end U.S. healthcare workflows across 
 > - Best agent (Claude Code + Claude Opus 4.6): **28.0%** overall pass@1
 > - No agent clears **20%** on strict pass^3
 > - Marathon (all 25 tasks in one session): **3.8%** overall
-> - End-to-end providerâ€“payer arena: **0%** on the best PA agents
+> - End-to-end provider–payer arena: **0%** on the best PA agents
 
 <p align="center">
-  <img src="assets/figures/main_pass_at_1.png" alt="pass@1 across the three Ï‡-Bench environments" width="780"/>
+  <img src="assets/figures/main_pass_at_1.png" alt="pass@1 across the three χ-Bench environments" width="780"/>
 </p>
 
 | Domain                               | Tasks | What the agent does                                                                                        |
@@ -44,6 +44,75 @@ $\chi$-Bench evaluates AI agents on end-to-end U.S. healthcare workflows across 
 | **Prior Authorization - UM (Payer)** | 25    | Intake the request, check plan policy, escalate through nurse and physician reviewers, issue determination |
 | **Care Management**                  | 25    | Review the chart, contact the patient, administer assessments, author a care plan                          |
 
+
+## Healthcare Analytics Portfolio Study
+
+This repository also contains an **independent healthcare analytics study of CHI-Bench**, developed as part of a healthcare data analytics portfolio.
+
+The study focuses on the **structure and complexity of healthcare workflows**, using reproducible Python/Jupyter analyses and derived task-level metadata. It does not claim that benchmark tasks represent unique patients, real-world clinical prevalence, or observed healthcare utilization.
+
+### Analytical coverage
+
+| Workflow perspective | Coverage | Analytical focus |
+|---|---:|---|
+| Provider Prior Authorization | 25 workflows | Condition diversity and policy-reference complexity |
+| Payer Utilization Management | 25 workflows | Workflow stages, documentation volume, and policy complexity |
+| Care Management | 25 workflows | Engagement scenarios, condition diversity, and workflow structure |
+| Prior Authorization E2E | 23 workflows | Provider-to-payer coordination and workflow handoffs |
+| Marathon | 3 sessions / 75 underlying task instances | Long-horizon orchestration and workflow-state preservation |
+
+### Key analytical findings
+
+- **Provider Prior Authorization:** 25 workflows covering 21 distinct condition titles, with 6–10 policy references per workflow.
+- **Payer Utilization Management:** 25 workflows spanning five workflow stages, with 111 request documents and 199 policy references.
+- **Policy complexity:** 17 of 25 provider workflows (**68%**) and 17 of 25 PA-UM workflows (**68%**) contain at least eight policy references.
+- **Care Management:** 25 workflows across 22 condition labels, with **60%** using hard-refusal engagement scenarios.
+- **Prior Authorization E2E:** 23 workflows integrating both provider and payer workflow environments, illustrating cross-stage coordination.
+- **Marathon:** three extended sessions reference the complete 25-task sets for provider PA, payer UM, and care management, collectively covering 75 underlying task instances.
+
+### Skills demonstrated
+
+**Healthcare analytics**
+- Prior authorization workflow analysis
+- Utilization-management workflow analysis
+- Care-management workflow analysis
+- Healthcare process and workflow mapping
+- Policy and documentation complexity analysis
+- Cross-stage healthcare workflow analysis
+
+**Data & analytics**
+- Python
+- Pandas
+- Jupyter Notebook
+- Structured metadata extraction
+- Data validation and quality checks
+- Reproducible analytical pipelines
+- Matplotlib-based visualization
+- CSV-based analytical datasets
+
+**AI / benchmark analysis**
+- Healthcare AI benchmark analysis
+- Long-horizon agent workflow evaluation
+- Task and workflow taxonomy
+- Benchmark reproducibility
+- Structured experiment analysis
+
+### Analysis artifacts
+
+- `analysis/notebooks/` — reproducible Jupyter analyses
+- `analysis/data/` — derived task-level metadata
+- `analysis/figures/` — analytical visualizations
+- `analysis/reports/` — written analytical findings
+- `analysis/scripts/` — metadata extraction and visualization scripts
+
+### Analytical scope and limitations
+
+The analysis examines benchmark workflow design and task characteristics. It does **not** inspect hidden evaluation artifacts or present benchmark composition as real-world clinical prevalence, patient behavior, utilization, or outcomes.
+
+The Marathon layer contains three extended sessions that reference existing task instances from the provider PA, payer UM, and care-management domains. Therefore, **75 underlying task instances should not be interpreted as 75 additional unique clinical cases**.
+
+This analytical work is independent of the official CHI-Bench benchmark results and does not claim model performance unless explicitly reported from a completed benchmark run.
+
 ## Setup (one-time)
 
 **Prereqs:** Python 3.12+, Docker, [uv](https://github.com/astral-sh/uv).
@@ -51,7 +120,7 @@ $\chi$-Bench evaluates AI agents on end-to-end U.S. healthcare workflows across 
 **1. Clone and install.**
 
 ```bash
-git clone https://github.com/actava-ai/chi-bench && cd chi-bench
+git clone https://github.com/drsumitbhardwaj10/chi-bench-healthcare-workflow-analysis.git && cd chi-bench-healthcare-workflow-analysis
 uv sync --extra dev
 ```
 
@@ -68,10 +137,10 @@ Provide whichever provider keys you need for the rows you intend to run. Hugging
 **3. Task fixtures from Hugging Face.** Authenticate once with the CLI, then download the gated dataset:
 
 ```bash
-uv run huggingface-cli login
+uv run hf auth login
 
 REV=chi-bench-v1.0.0
-uv run huggingface-cli download actava/chi-bench --repo-type dataset --revision "$REV" --local-dir data/
+uv run hf download actava/chi-bench --repo-type dataset --revision "$REV" --local-dir data/
 echo "$REV" > data/.chi-bench-version
 ```
 
@@ -82,7 +151,7 @@ The `data/.chi-bench-version` pin is what submission preflight verifies against 
 The handbook (1,279 markdown documents) is distributed separately as the **gated** Hugging Face dataset **[actava/managed-care-operations-handbook](https://huggingface.co/datasets/actava/managed-care-operations-handbook)** (size + curation provenance with clinical collaborators). Request access on that repo's page; once approved, download it into `data/skills/` with your HF token:
 
 ```bash
-uv run huggingface-cli download actava/managed-care-operations-handbook \
+uv run hf download actava/managed-care-operations-handbook \
     --repo-type dataset --local-dir data/skills/
 # -> data/skills/managed-care-operations-handbook/{SKILL.md,references/}
 ```
@@ -134,7 +203,7 @@ Full flag-by-flag CLI reference: [`docs/cli.md`](docs/cli.md). Web walkthrough o
 
 chi-Bench is also published to the [Harbor hub](https://hub.harborframework.com/datasets/actava-ai/chi-bench) as `actava-ai/chi-bench` - **78 single-agent tasks** (75 single-domain + 3 marathon). Each task ships a self-contained Dockerfile that Harbor builds on demand - cloning this repo and downloading the [fixtures dataset](https://huggingface.co/datasets/actava/chi-bench) at build - so you can run a trial without cloning anything yourself.
 
-> **The 23 providerâ†”payer E2E tasks are *not* on the Harbor hub.** The E2E arena needs the two-agent `dual-pa-e2e` harness (provider phase â†’ relay â†’ payer phase), which a stock single-agent `harbor run` can't drive. Run E2E from this repo / the [HF dataset](https://huggingface.co/datasets/actava/chi-bench) with the `cb` CLI: `cb experiment run --dataset data/prior_auth_e2e/tasks/<id> --agent dual-pa-e2e --provider-model â€¦ --payer-model â€¦` (see [`configs/experiments/table2_e2e_arena.yaml`](configs/experiments/table2_e2e_arena.yaml)).
+> **The 23 provider↔payer E2E tasks are *not* on the Harbor hub.** The E2E arena needs the two-agent `dual-pa-e2e` harness (provider phase → relay → payer phase), which a stock single-agent `harbor run` can't drive. Run E2E from this repo / the [HF dataset](https://huggingface.co/datasets/actava/chi-bench) with the `cb` CLI: `cb experiment run --dataset data/prior_auth_e2e/tasks/<id> --agent dual-pa-e2e --provider-model … --payer-model …` (see [`configs/experiments/table2_e2e_arena.yaml`](configs/experiments/table2_e2e_arena.yaml)).
 
 **Prerequisites:** Docker + the [Harbor CLI](https://github.com/harbor-framework/harbor), and an **approved HF token** for the gated [handbook](https://huggingface.co/datasets/actava/managed-care-operations-handbook) (the container downloads it at start; the fixtures dataset itself is public).
 
@@ -145,7 +214,7 @@ HF_TOKEN=<your-approved-hf-token> harbor run \
     -a claude-code -m claude-opus-4-7 -y
 ```
 
-`HF_TOKEN` is read from your shell (or `--env-file`) and forwarded into the container - `-y` auto-confirms that prompt. Drop `-i â€¦` to run all 78 tasks. Without an approved token the container exits early with a clear message. See [`docs/harbor-hub.md`](docs/harbor-hub.md) for how the fetch-at-build environment works and how the listing is regenerated/published. This path is for ad-hoc runs and discovery; the **paper-reproduction and leaderboard-submission flows use the `cb` CLI** described above.
+`HF_TOKEN` is read from your shell (or `--env-file`) and forwarded into the container - `-y` auto-confirms that prompt. Drop `-i …` to run all 78 tasks. Without an approved token the container exits early with a clear message. See [`docs/harbor-hub.md`](docs/harbor-hub.md) for how the fetch-at-build environment works and how the listing is regenerated/published. This path is for ad-hoc runs and discovery; the **paper-reproduction and leaderboard-submission flows use the `cb` CLI** described above.
 
 ### Reading the verifier output
 
@@ -247,7 +316,7 @@ Web walkthrough of the same flow (single trial, submission lifecycle, paper-tabl
 | `openai-agents` | `deepseek/deepseek-v4-pro`    | OAI Agents  |
 | `deepagents`    | `openrouter/x-ai/grok-4.3`    | DeepAgents  |
 
-The full 30-row matrix (every model Ã— harness reported in the main results table) lives in [`configs/experiments/table1_main_matrix.yaml`](configs/experiments/table1_main_matrix.yaml). Browse all 75 tasks at **[actava.ai/benchmarks/tasks](https://actava.ai/benchmarks/tasks)**.
+The full 30-row matrix (every model × harness reported in the main results table) lives in [`configs/experiments/table1_main_matrix.yaml`](configs/experiments/table1_main_matrix.yaml). Browse all 75 tasks at **[actava.ai/benchmarks/tasks](https://actava.ai/benchmarks/tasks)**.
 
 See [`docs/extending.md`](docs/extending.md) (or **[the web version](https://actava.ai/benchmarks/docs/extending)**) to plug in your own.
 
@@ -277,35 +346,4 @@ If you use $\chi$-Bench, please cite:
 ## License
 
 Code: Apache-2.0 (see [`LICENSE`](LICENSE)). Data licensing on the [HF dataset card](https://huggingface.co/datasets/actava/chi-bench).
-
-
-## Analytical Workflow Study
-
-This repository also contains a structured analysis of CHI-Bench task design, developed independently as part of a healthcare analytics portfolio.
-
-The analysis examines five complementary workflow perspectives:
-
-| Analysis | Coverage | Focus |
-|---|---:|---|
-| Provider Prior Authorization | 25 workflows | Condition diversity and policy-reference complexity |
-| Payer Utilization Management | 25 workflows | Workflow stages, documentation volume, and policy complexity |
-| Care Management | 25 workflows | Engagement scenarios, condition diversity, and workflow structure |
-| Prior Authorization E2E | 23 workflows | Provider-to-payer handoff and end-to-end workflow structure |
-| Marathon | 3 sessions / 75 underlying task instances | Long-horizon orchestration and workflow-state preservation |
-
-### Analysis artifacts
-
-- `analysis/notebooks/` - reproducible Jupyter analyses
-- `analysis/data/` - derived task-level metadata
-- `analysis/figures/` - analytical visualizations
-- `analysis/reports/` - written findings
-- `analysis/scripts/` - metadata extraction and visualization scripts
-
-### Analytical scope
-
-The analysis covers individual workflow complexity, provider-to-payer coordination, care-management engagement scenarios, and long-horizon multi-workflow execution.
-
-The Marathon layer contains three extended sessions covering the complete 25-task sets for provider prior authorization, payer utilization management, and care management. These sessions collectively reference 75 underlying task instances, but they should not be interpreted as 75 additional unique clinical cases.
-
-The analysis focuses on benchmark structure and workflow characteristics. It does not use hidden evaluation artifacts and does not present benchmark task composition as real-world clinical prevalence, utilization, or patient behavior.
 
